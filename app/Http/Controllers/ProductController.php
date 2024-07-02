@@ -57,6 +57,13 @@ class ProductController extends Controller
         $product->productName = $request->productName;
         $product->price = $request->price;
         $product->photo = $imageName;
+        if($request->isActive == null){
+            $product->isActive = 0;
+        }
+        else{
+            $product->isActive = 1;
+        }        
+
 
         $product->save();
 
@@ -101,6 +108,12 @@ class ProductController extends Controller
 
         $product->productName = $request->productName;
         $product->price = $request->price;
+        if($request->isActive == null){
+            $product->isActive = 0;
+        }
+        else{
+            $product->isActive = 1;
+        }
 
         if($request->photo != null){
             //not empty
@@ -131,4 +144,21 @@ class ProductController extends Controller
                         ->with('success','Product deleted successfully');
 
     }
+
+    /* ----------------------------------------------------------------------------------- */
+
+    public function isActive(Product $product)
+    {
+        if($product->isActive == 0){
+            $product->isActive = 1;
+        }
+        else{
+            $product->isActive = 0;
+        }
+        
+        $product->save();    
+        return redirect()->route('products.index')
+                        ->with('success','Product Active Status Changed successfully');
+    }
+
 }

@@ -51,6 +51,24 @@
                 @endphp
                 <img id="imagePreview" alt="image Preview" style="max-width:150px; max-height:150px;" src="{{$photo}}">
 
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="form-check form-switch">
+                        @php
+                            if($product->isActive == 1) {
+                                $status = "checked";
+                            }
+                            else {
+                                $status = "";
+                            }
+                        @endphp
+                        <input type="checkbox" class="form-check-input" name="isActive" {{$product->isActive == 1 ? "checked" : ""}}>
+                        is Active Product
+                        <label class="form-check-label" for="isActive">
+                            is Active Product
+                        </label>
+                    </div>
+                        
+                </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                         <br>
                         <button type="submit" class="btn btn-primary">Submit</button>

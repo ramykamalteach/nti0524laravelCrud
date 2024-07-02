@@ -9,3 +9,5 @@ Route::get('/', function () {
 });
 
 Route::resource("products", ProductController::class);
+
+Route::post('products/isActive/{product}', 'App\Http\Controllers\ProductController@isActive')->name('products.isActive');

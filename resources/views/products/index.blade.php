@@ -42,7 +42,7 @@
                     </td>
 
                     <td>
-                        <form action="{{ route('products.destroy',$oneProduct->id) }}" method="POST">
+                        <form action="{{ route('products.destroy',$oneProduct->id) }}" method="POST" style="display: inline;">
         
                             <a class="btn btn-info" href="{{ route('products.show', $oneProduct->id) }}">Show</a>
         
@@ -53,6 +53,19 @@
             
                             <button type="submit" class="btn btn-danger">Delete</button>
                         </form>
+
+                        {{-- ------------------------------- --}}
+
+                        <form action="{{ route('products.isActive', $oneProduct->id) }}" method="POST" style="display: inline;">
+                            @csrf
+                            @method('POST')
+                            @if ($oneProduct->isActive == 0)
+                                <button type="submit" class="btn btn-secondary">Active</button>
+                            @else
+                                <button type="submit" class="btn btn-warning">DeActive</button>
+                            @endif                      
+                        </form>
+        
                     </td>
         
                 </tr>

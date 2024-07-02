@@ -19,13 +19,19 @@
     <div class="row">
         <h2 class="col-xs-6 col-sm-6 col-md-6">
             <div class="form-group">
-                <strong>Product Name:</strong>
+                <strong>Product Name : </strong>
                 {{ $product->productName }}
             </div>
             <div class="form-group">
-                <strong>Price:</strong>
+                <strong>Price : </strong>
                 {{ $product->price }}
             </div>
+            <div class="form-group">
+                <strong>Status : </strong>
+                {{$product->isActive == 1 ? "Active" : "Not Active"}}
+            </div>
+
+            
         </h2>
         <div class="col-xs-6 col-sm-6 col-md-6">
             @php

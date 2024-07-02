@@ -54,6 +54,17 @@
 
                 <img id="imagePreview" alt="image Preview" style="max-width:150px; max-height:150px;">
 
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="form-check form-switch">
+                        <input type="checkbox" class="form-check-input" name="isActive">
+                        is Active Product
+                        <label class="form-check-label" for="isActive">
+                            is Active Product
+                        </label>
+                    </div>
+                        
+                </div>
+
                 <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                         <br>
                         <button type="submit" class="btn btn-primary">Submit</button>
